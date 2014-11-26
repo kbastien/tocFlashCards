@@ -65,7 +65,7 @@ Stack = function Stack (config) {
                 'throwinend',
                 'dragstart',
                 'dragmove',
-                'dragend'
+                'dragend',
             ];
 
         // Proxy Card events to the Stack.

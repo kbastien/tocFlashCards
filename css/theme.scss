@@ -1,27 +1,57 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  background-color: #6EB4DC !important;
+  color: white !important;
+}
+
 .card-container {
   width: 80%;
-  height: 50rem;
-  margin-top: 8rem;
+  height: 40rem;
+  margin-top: 3rem;
 
+}
+
+.well {
+  background: #13415D !important;
+  border: none !important;
+
+  .submit-copy {
+    margin-top: 29%;
+  }
 }
 
 .stack {
   li {
-    width: 200px;
+    width: 220px;
     height: 300px;
     list-style: none;
     background: #fff;
     border-radius: 5px;
     position: absolute;
-    top: 30%;
-    left: 26%;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
+    top: 18%;
+    left: 24%;
+    box-shadow: 0 0 2px rgba(83, 90, 93, 0.2), 1px 1px 1px rgba(83, 90, 93, 0.2);
     line-height: 300px;
     text-align: center;
-    font-size: 15px;
-    border: 10px solid #ECECEC;
+    border: 10px solid #fff;
     box-sizing: border-box;
     cursor: default;
     list-style-position: inside;
   }
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+}
+
+li pre {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  background: #fff;
+  border: none;
+  color: #808c90;
+  font-size: 23px;
+  margin-top: 30%;
+  padding: 10;
 }
