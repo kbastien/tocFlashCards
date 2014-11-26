@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theory of Computation Flashcards</title>
+<link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/swing/dist/swing.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-md-offset-3">
+        <div class="well card-container">
+          <ul class="stack">
+              <li class="question1">a</li>
+              <li class="question2">b</li>
+              <li class="question3">c</li>
+              <li class="question4"></li>
+              <li class="question5"></li>
+              <li class="question6"></li>
+              <li class="question7"></li>
+              <li class="question8"></li>    
+              <li class="question9"></li>
+              <li class="question10"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    var stack;
+
+    stack = gajus.Swing.Stack();
+
+    [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
+        stack.createCard(targetElement);
+
+        targetElement.classList.add('in-deck');
+    });
+
+    stack.on('throwout', function (e) {
+        console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
+        
+        e.target.classList.remove('in-deck');
+    });
+
+    stack.on('throwin', function (e) {
+        console.log(e.target.innerText || e.target.textContent, 'has been thrown into the stack from the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
+
+        e.target.classList.add('in-deck');
+    });
+});
+  </script>
+
+</body>
+</html>
