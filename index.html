@@ -17,7 +17,9 @@
       <div class="col-md-7 col-md-offset-3">
         <div class="well card-container">
           <ul class="stack">
-              <li class="question1">a</li>
+              <li class="question1">
+
+              </li>
               <li class="question2">b</li>
               <li class="question3">c</li>
               <li class="question4"></li>
@@ -26,7 +28,9 @@
               <li class="question7"></li>
               <li class="question8"></li>    
               <li class="question9"></li>
-              <li class="question10"></li>
+              <li class="question10">
+                  <pre>Is A a subset of B? A = {'abc','ab','a'}B = {'abc', 'ab',   'aa', 'aaa'}</pre>
+              </li>
           </ul>
         </div>
       </div>
@@ -38,6 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stack = gajus.Swing.Stack();
 
+
+    var expectedValues = {
+        "Is A a subset of B? A = {'abc','ab','a'}B = {'abc', 'ab',   'aa', 'aaa'}" : false
+    };
+
+    var userAnswers = {};
+
     [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
         stack.createCard(targetElement);
 
@@ -46,7 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stack.on('throwout', function (e) {
         console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
-        
+
+        $text = e.target.innerText;
+
+        if (e.throwDirection == 1) {
+
+            userAnswers[$text] = false;
+        }
+        else {
+            userAnswers[$text] = true;
+        }
+
+        console.log(userAnswers);
+
         e.target.classList.remove('in-deck');
     });
 
