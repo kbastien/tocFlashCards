@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     $('button').click(function(){
-        var number = findCorrectAnswers();
+        var number = numberCorrect;
+        console.log(number);
         $('.submit-copy').hide();
         $('button').hide();
         $('.score').append('You got ' + number + ' correct out of 10!');
