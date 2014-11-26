@@ -65,10 +65,36 @@ document.addEventListener('DOMContentLoaded', function () {
     var userAnswers = {};
 
     [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
-        stack.createCard(targetElement);
+        card = stack.createCard(targetElement);
 
         targetElement.classList.add('in-deck');
+        card.inDeck = true;
     });
+
+    window.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+
+
+        if(!card.inDeck) {
+            return;
+        }
+
+        if(key == 39) {
+           card.throwOut(100,100);
+            card.inDeck = false;
+        }
+        else if(key == 37) {
+            card.throwOut(-100,-100);
+            card.inDeck = false;
+        }
+
+        list = document.getElementsByClassName('in-deck');
+
+        [].forEach.call(list, function (targetElement) {
+            card = stack.getCard(targetElement);
+        });
+    };
+
 
     stack.on('throwout', function (e) {
         console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
@@ -84,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         e.target.classList.remove('in-deck');
+        e.inDeck = false;
 
         findCorrectAnswers();
     });
