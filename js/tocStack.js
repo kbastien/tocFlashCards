@@ -6,16 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var numberCorrect = 0;
 
     var expectedValues = {};
-        expectedValues["Is A a subset of B?   A = {'abc','ab','a'}    B = {'abc', 'ab',   'aa', 'aaa'}"] = false;
-        expectedValues["Is the Hamiltonian Path Problem NP-complete?"] = true;
-        expectedValues["A graph is an     ordered collection     of nodes and     vertices."] = false;
-        expectedValues["A one-way           function maps a   single input to   multiple outputs."] = false;
+        expectedValues["Is A a subset of B?   A = {'abc','ab','a'}    B = {'abc', 'ab',         'aa', 'aaa'}"] = false;
+        expectedValues["Is the Hamiltonian      Path Problem      NP-complete?"] = true;
+        expectedValues["A graph is an       ordered collection     of nodes and         vertices."] = false;
+        expectedValues["A one-way           function maps a      single input to      multiple outputs."] = false;
         expectedValues["A tuple is an       ordered collection of elements."] = true;
-        expectedValues["A turing machine  is able to solve all of the problems                 that a              super-computer    can."] = false;
-        expectedValues["A string is a set of characters where      order does not      matter."] = false;
+        expectedValues["A turing machine    is able to solve all   of the problems                 that a                 super-computer         can."] = false;
+        expectedValues["A string is a set of   characters where      order does not      matter."] = false;
         expectedValues["All NFA's can be       represented by    DFA's."] = true;
-        expectedValues["All DFA's can be       converted to                Regular           Expressions."] = true;
-        expectedValues["All Turing          Machines can be      converted to      NFA's."] = false;
+        expectedValues["All DFA's can be       converted to                   Regular              Expressions."] = true;
+        expectedValues["All Turing          Machines can be      converted to NFA's."] = false;
 
 
     var userAnswers = {};
