@@ -89,4 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log("Number Correct = " + numberCorrect);
     }
+
+    $('button').click(function(){
+        var number = findCorrectAnswers();
+        $('.submit-copy').hide();
+        $('button').hide();
+        $('.score').append('You got ' + number + ' correct out of 10!');
+    });
 });
+

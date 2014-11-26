@@ -15,13 +15,14 @@
 <body>
   <div class="container">
       <div class="row">
-          <div class="col-lg-6"><h3>True</h3></div>
-          <div class="col-lg-6 text-right"><h3>False</h3></div>
+          <div class="col-lg-6"><h3 class ="true">True</h3></div>
+          <div class="col-lg-6 text-right"><h3 class="false">False</h3></div>
       </div>
     <div class="row">
       <div class="col-md-7 col-md-offset-3">
         <div class="well card-container">
           <p class="submit-copy text-center">When you are ready, click submit!</p>
+          <p class="score text-center"></p>
           <button class="btn btn-primary">Submit</button>
           <ul class="stack">
               <li class="question1">
@@ -58,7 +59,22 @@
         </div>
       </div>
     </div>
+    <div class= "row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="blurb">
+          <p>The intention of the project is to give those, who are unfamiliar with topics in Theory of Computation, a glimpse into some of the basic topics covered by the course.</p>
+          <p class="text-center">Source code can be found on <a href="https://github.com/kbastien/tocFlashCards">Github</a></p>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <p class="navbar-text">Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="http://kevinbastien.com">Kevin Bastien</a> and <a href="http://github.com/nwarlen">Nick Warlen</a></p>
+        </div>
+      </div>
+    </div>
   <script type="text/javascript" src="js/tocStack.js"></script>
 
 </body>

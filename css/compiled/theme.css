@@ -3,26 +3,32 @@ body {
   background-color: #6EB4DC !important;
   color: white !important; }
 
+.true, .false {
+  font-size: 30px; }
+
 .card-container {
   width: 80%;
-  height: 40rem;
-  margin-top: 3rem; }
+  height: 43rem;
+  margin-top: 1rem; }
 
 .well {
   background: #13415D !important;
   border: none !important; }
   .well .submit-copy {
     margin-top: 29%; }
+  .well .score {
+    margin-top: 29%;
+    font-size: 30px; }
 
 .stack li {
-  width: 220px;
-  height: 300px;
+  width: 230px;
+  height: 320px;
   list-style: none;
   background: #fff;
   border-radius: 5px;
   position: absolute;
-  top: 18%;
-  left: 24%;
+  top: 13%;
+  left: 23%;
   box-shadow: 0 0 2px rgba(83, 90, 93, 0.2), 1px 1px 1px rgba(83, 90, 93, 0.2);
   line-height: 300px;
   text-align: center;
@@ -33,7 +39,7 @@ body {
 
 .btn {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 35%; }
 
 li pre {
@@ -44,5 +50,18 @@ li pre {
   font-size: 23px;
   margin-top: 30%;
   padding: 10; }
+
+.blurb {
+  width: 100%; }
+  .blurb p {
+    margin-right: 5%; }
+
+.navbar {
+  background-color: #6EB4DC !important;
+  border: none !important; }
+  .navbar p {
+    color: white !important; }
+    .navbar p .glyphicon {
+      color: red; }
 
 /*# sourceMappingURL=theme.css.map */
