@@ -17,8 +17,10 @@ body {
   .well .submit-copy {
     margin-top: 29%; }
   .well .score {
-    margin-top: 29%;
+    margin-top: 10%;
     font-size: 30px; }
+  .well .party {
+    margin-left: 17%; }
 
 .stack li {
   width: 230px;

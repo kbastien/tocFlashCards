@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.submit-copy').hide();
         $('button').hide();
         $('.score').append('You got ' + number + ' correct out of 10!');
+        $('.party').append('<img src="assets/giphy.gif">')
     });
 });
 
