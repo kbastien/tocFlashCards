@@ -13,20 +13,29 @@
 </head>
 <body>
   <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="col-md-4 text-center"><div class="h3">True</div></div>
+              <div class="col-md-4 text-center"><div class="h4">OR</div></div>
+              <div class="col-md-4 text-center"><div class="h3">False</div></div>
+          </div>
+      </div>
     <div class="row">
       <div class="col-md-7 col-md-offset-3">
         <div class="well card-container">
           <ul class="stack">
-              <li class="question1">a</li>
-              <li class="question2">b</li>
-              <li class="question3">c</li>
-              <li class="question4"></li>
-              <li class="question5"></li>
-              <li class="question6"></li>
-              <li class="question7"></li>
-              <li class="question8"></li>    
-              <li class="question9"></li>
-              <li class="question10"></li>
+              <li class="question1">b</li>
+              <li class="question2">c</li>
+              <li class="question3">d</li>
+              <li class="question4">e</li>
+              <li class="question5">f</li>
+              <li class="question6">g</li>
+              <li class="question7">h</li>
+              <li class="question8">i</li>
+              <li class="question9">j</li>
+              <li class="question10">
+                  <pre>Is A a subset of B? A = {'abc','ab','a'}B = {'abc', 'ab',   'aa', 'aaa'}</pre>
+              </li>
           </ul>
         </div>
       </div>
@@ -38,6 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stack = gajus.Swing.Stack();
 
+    var numberCorrect = 0;
+
+    var expectedValues = {
+        "Is A a subset of B? A = {'abc','ab','a'}B = {'abc', 'ab',   'aa', 'aaa'}" : false,
+        "b" : true,
+        "c" : false,
+        "d" : false,
+        "e" : true,
+        "f" : false,
+        "g" : false,
+        "h" : true,
+        "i" : true,
+        "j" : true
+    };
+
+    var userAnswers = {};
+
     [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
         stack.createCard(targetElement);
 
@@ -46,8 +72,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stack.on('throwout', function (e) {
         console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
-        
+
+        $text = e.target.innerText;
+
+        if (e.throwDirection == 1) {
+
+            userAnswers[$text] = false;
+        }
+        else {
+            userAnswers[$text] = true;
+        }
+
         e.target.classList.remove('in-deck');
+
+        findCorrectAnswers();
     });
 
     stack.on('throwin', function (e) {
@@ -55,6 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         e.target.classList.add('in-deck');
     });
+
+    var findCorrectAnswers = function() {
+        numberCorrect = 0;
+        for(var key in userAnswers) {
+            if(userAnswers.hasOwnProperty(key)) {
+                if (userAnswers[key] == expectedValues[key]) {
+                    numberCorrect++;
+                }
+            }
+        }
+
+        console.log("Number Correct = " + numberCorrect);
+    }
 });
   </script>
 
